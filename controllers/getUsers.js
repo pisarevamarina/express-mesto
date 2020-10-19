@@ -24,7 +24,7 @@ const getUser = (req, res) => {
       }
       return res.send(user);
     })
-    .catch((err) => res.status(500).send({ message: `Что-то пошло не так` }));
+    .catch(() => res.status(500).send({ message: 'Что-то пошло не так' }));
 };
 
 module.exports = {
