@@ -1,16 +1,16 @@
-const Card = require('../models/card')
+const Card = require('../models/card');
 
 const getCards = async (req, res) => {
   try {
-    const cards = await Card.find({})
-    res.status(200).send(cards)
+    const cards = await Card.find({});
+    res.status(200).send(cards);
   } catch (err) {
     if (err.name === 'CastError') {
       res.status(400).send({ message: 'Произошла ошибка' });
     }
-    res.status(500).send({ message: `Что-то пошло не так: ${err}` })
+    res.status(500).send({ message: `Что-то пошло не так: ${err}` });
   }
-}
+};
 
 const createCard = async (req, res) => {
   try {
@@ -22,24 +22,24 @@ const createCard = async (req, res) => {
     if (err.name === 'CastError') {
       res.status(400).send({ message: 'Произошла ошибка' });
     }
-    res.status(500).send({ message: 'Что-то пошло не так' })
+    res.status(500).send({ message: 'Что-то пошло не так' });
   }
-}
+};
 
 const deleteCard = async (req, res) => {
   try {
-const card = await Card.findByIdAndRemove(req.params.id)
-if(!card) {
-  return res.status(404).send({ message: 'Нет карточки с таким id' });
-}
-res.status(200).send(card)
-  } catch (err) {
-    if(err.name === 'CastError') {
-      res.status(400).send({ message: 'Невалидный id' })
+    const card = await Card.findByIdAndRemove(req.params.id);
+    if (!card) {
+      res.status(404).send({ message: 'Нет карточки с таким id' });
     }
-    res.status(500).send({ message: 'Что-то пошло не так' })
+    res.status(200).send(card);
+  } catch (err) {
+    if (err.name === 'CastError') {
+      res.status(400).send({ message: 'Невалидный id' });
+    }
+    res.status(500).send({ message: 'Что-то пошло не так' });
   }
-}
+};
 
 const likeCard = async (req, res) => {
   try {
@@ -47,42 +47,41 @@ const likeCard = async (req, res) => {
       req.params.id,
       { $addToSet: { likes: req.user._id } },
       { new: true },
-    )
-    if(!card) {
-      return res.status(404).send({ message: 'Нет карточки с таким id' });
-    };
-    res.status(200).send(card)
-  } catch (err) {
-    if(err.name === 'CastError') {
-      res.status(400).send({ message: 'Невалидный id' })
+    );
+    if (!card) {
+      res.status(404).send({ message: 'Нет карточки с таким id' });
     }
-    res.status(500).send({ message: 'Что-то пошло не так' })
+    res.status(200).send(card);
+  } catch (err) {
+    if (err.name === 'CastError') {
+      res.status(400).send({ message: 'Невалидный id' });
+    }
+    res.status(500).send({ message: 'Что-то пошло не так' });
   }
-}
+};
 
 const dislikeCard = async (req, res) => {
-  try{
+  try {
     const card = await Card.findByIdAndUpdate(
       req.params.id,
-    { $pull: { likes: req.user._id } },
+      { $pull: { likes: req.user._id } },
     );
-    if(!card) {
-      return res.status(404).send({ message: 'Нет карточки с таким id' });
-    };
-    res.status(200).send(card)
-  }
-  catch (err) {
-    if(err.name === 'CastError') {
-      res.status(400).send({ message: 'Невалидный id' })
+    if (!card) {
+      res.status(404).send({ message: 'Нет карточки с таким id' });
     }
-    res.status(500).send({ message: 'Что-то пошло не так' })
+    res.status(200).send(card);
+  } catch (err) {
+    if (err.name === 'CastError') {
+      res.status(400).send({ message: 'Невалидный id' });
+    }
+    res.status(500).send({ message: 'Что-то пошло не так' });
   }
-}
+};
 
 module.exports = {
   getCards,
   createCard,
   deleteCard,
   likeCard,
-  dislikeCard
+  dislikeCard,
 };

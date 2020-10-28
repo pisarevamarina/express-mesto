@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
       validator(v) {
         return /^http[s]:\/\/\w+/.test(v);
       },
-      message: props => `${props.value} is not a valid link!`
+      message: (props) => `${props.value} is not a valid link!`,
     },
   },
 });
