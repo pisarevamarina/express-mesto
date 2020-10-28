@@ -5,6 +5,9 @@ const getCards = async (req, res) => {
     const cards = await Card.find({})
     res.status(200).send(cards)
   } catch (err) {
+    if (err.name === 'CastError') {
+      res.status(400).send({ message: 'Произошла ошибка' });
+    }
     res.status(500).send({ message: `Что-то пошло не так: ${err}` })
   }
 }
@@ -16,8 +19,10 @@ const createCard = async (req, res) => {
     const card = await Card.create({ owner, name, link });
     res.status(200).send(card);
   } catch (err) {
-    console.log(err);
-    res.status(500).send({ message: 'Произошла ошибка' });
+    if (err.name === 'CastError') {
+      res.status(400).send({ message: 'Произошла ошибка' });
+    }
+    res.status(500).send({ message: 'Что-то пошло не так' })
   }
 }
 
@@ -29,7 +34,9 @@ if(!card) {
 }
 res.status(200).send(card)
   } catch (err) {
-    console.log(err)
+    if(err.name === 'CastError') {
+      res.status(400).send({ message: 'Невалидный id' })
+    }
     res.status(500).send({ message: 'Что-то пошло не так' })
   }
 }

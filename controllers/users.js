@@ -5,7 +5,9 @@ const getUsers = async (req, res) => {
 const users = await User.find({})
 res.status(200).send(users)
   } catch (err) {
-    console.log(err)
+    if (err.name === 'CastError') {
+      res.status(400).send({ message: 'Произошла ошибка' });
+    }
     res.status(500).send({ message: `Что-то пошло не так: ${err}` })
   }
 }
@@ -18,7 +20,9 @@ const getUser = async (req, res) => {
     }
     return res.send(user);
   } catch (err) {
-
+    if(err.name === 'CastError') {
+      res.status(400).send({ message: 'Невалидный id' })
+    }
     res.status(500).send({ message: 'Что-то пошло не так' })
   }}
 
@@ -29,8 +33,10 @@ const getUser = async (req, res) => {
       const user = await User.create({ name, about, avatar, id})
       res.status(200).send(user)
     } catch (err) {
-      console.log(err)
-      res.status(500).send({ message: 'Произошла ошибка' })
+      if (err.name === 'CastError') {
+        res.status(400).send({ message: 'Произошла ошибка' });
+      }
+      res.status(500).send({ message: 'Что-то пошло не так' })
     }
   }
 
