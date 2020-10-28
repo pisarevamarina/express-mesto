@@ -8,7 +8,6 @@
                 "_id": "d285e3dceed844f902650f40"
             }
         ],
-        "_id": "5d208fb50fdbbf001ffdf72a",
         "name": "Иваново",
         "link": "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
         "owner": {
@@ -40,7 +39,6 @@
                 "_id": "dbfe53c3c4d568240378b0c6"
             }
         ],
-        "_id": "5d208fe20fdbbf001ffdf72b",
         "name": "Архыз",
         "link": "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
         "owner": {
@@ -60,7 +58,6 @@
                 "_id": "d285e3dceed844f902650f40"
             }
         ],
-        "_id": "5d208ff30fdbbf001ffdf72c",
         "name": "Байкал",
         "link": "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
         "owner": {
@@ -80,7 +77,6 @@
                 "_id": "f20c9c560aa652a72cba323f"
             }
         ],
-        "_id": "5d2090310fdbbf001ffdf72d",
         "name": "Камчатка",
         "link": "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
         "owner": {
@@ -118,7 +114,6 @@
                 "_id": "dbfe53c3c4d568240378b0c6"
             }
         ],
-        "_id": "5d2090470fdbbf001ffdf72e",
         "name": "Тулиновка",
         "link": "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/tulinovka.jpg",
         "owner": {
@@ -144,7 +139,6 @@
                 "_id": "d285e3dceed844f902650f40"
             }
         ],
-        "_id": "5d2090710fdbbf001ffdf72f",
         "name": "Владивосток",
         "link": "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/vladivostok.jpg",
         "owner": {
@@ -170,7 +164,6 @@
                 "_id": "8340d0ec33270a25f2413b69"
             }
         ],
-        "_id": "5d28fd8f2eb23e001f5c356a",
         "name": "Пододеялово",
         "link": "http://dvinatoday.ru/upload/iblock/76a/2522230.jpg",
         "owner": {
@@ -196,7 +189,6 @@
                 "_id": "8340d0ec33270a25f2413b69"
             }
         ],
-        "_id": "5d298f3e2eb23e001f5c357e",
         "name": "Сургут",
         "link": "https://img-cdn.tinkoffjournal.ru/surgut__view.dwyx02q9rqqn.jpg?blackMark",
         "owner": {
@@ -222,7 +214,6 @@
                 "_id": "f20c9c560aa652a72cba323f"
             }
         ],
-        "_id": "5d298ff92eb23e001f5c357f",
         "name": "Тюмень",
         "link": "http://www.tyumen-city.ru/files_new/news/2018/11/5bfbba7edb380.jpg?blackMark",
         "owner": {
@@ -260,7 +251,6 @@
                 "_id": "7d8c010a1c97ca2654997a95"
             }
         ],
-        "_id": "5d29bdef2eb23e001f5c35ae",
         "name": "Белк",
         "link": "https://cdn.cultofmac.com/wp-content/uploads/2013/04/AlanKay.jpg",
         "owner": {
@@ -298,7 +288,6 @@
                 "_id": "f20c9c560aa652a72cba323f"
             }
         ],
-        "_id": "5d2ae3f62eb23e001f5c35d9",
         "name": "ПИ卞Σᑭ",
         "link": "http://static1.vigbo.com/u35512/46764/blog/4393601/3333944/42190916/1000-069a21e9d8ed75b85cc4f343299dd0be.jpg?blackMark",
         "owner": {
@@ -311,7 +300,6 @@
     },
     {
         "likes": [],
-        "_id": "5d42ec5529a31b001ff069d3",
         "name": "picture",
         "link": "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/zheltukhin-island.jpg",
         "owner": {
@@ -331,7 +319,6 @@
                 "_id": "f20c9c560aa652a72cba323f"
             }
         ],
-        "_id": "5d42f19f29a31b001ff069d4",
         "name": "picture",
         "link": "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/zheltukhin-island.jpg",
         "owner": {
@@ -344,7 +331,6 @@
     },
     {
         "likes": [],
-        "_id": "5d42f21f29a31b001ff069d5",
         "name": "Barcelona",
         "link": "https://unsplash.com/photos/s2q1_cxLHSE",
         "owner": {
@@ -370,7 +356,6 @@
                 "_id": "dbfe53c3c4d568240378b0c6"
             }
         ],
-        "_id": "5d42f30829a31b001ff069d6",
         "name": "Barcelona",
         "link": "https://images.unsplash.com/photo-1528744598421-b7b93e12df15?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80",
         "owner": {
@@ -390,7 +375,6 @@
                 "_id": "d285e3dceed844f902650f40"
             }
         ],
-        "_id": "5d43208d29a31b001ff069d7",
         "name": "Barcelona2",
         "link": "https://images.unsplash.com/photo-1456132311779-ca4ff6130510?ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80",
         "owner": {
@@ -422,7 +406,6 @@
                 "_id": "dbfe53c3c4d568240378b0c6"
             }
         ],
-        "_id": "5d5556248a1004001f393aef",
         "name": "Москва",
         "link": "https://images.unsplash.com/photo-1495542779398-9fec7dc7986c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1268&q=80",
         "owner": {
@@ -448,7 +431,6 @@
                 "_id": "d285e3dceed844f902650f40"
             }
         ],
-        "_id": "5d596e158a1004001f394465",
         "name": "Замок Гогенцоллерн",
         "link": "https://wallbox.ru/resize/1280x720/wallpapers/main/201434/94ba1a5ca5c0d0f.jpg",
         "owner": {
@@ -474,7 +456,6 @@
                 "_id": "d285e3dceed844f902650f40"
             }
         ],
-        "_id": "5d59918b8a1004001f39446d",
         "name": "Матушка",
         "link": "https://cyrustravel.com/wp-content/uploads/2019/02/new-russia-tour-image-7-1024x640.jpg",
         "owner": {
