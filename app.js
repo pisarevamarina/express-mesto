@@ -21,11 +21,13 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+
 app.use('/', users);
 app.use('/', cards);
 
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
+
 
 app.get('*', (req, res) => {
   res.status(404).send({ message: 'Запрашиваемый ресурс не найден' });

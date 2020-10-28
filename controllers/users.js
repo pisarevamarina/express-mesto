@@ -40,8 +40,47 @@ const getUser = async (req, res) => {
     }
   }
 
+  const updateUser = async (req, res) => {
+    try {
+      const user = await User.findByIdAndUpdate(req.user._id, {
+        name: req.body.name,
+        about: req.body.about,
+      }, {
+        new: true,
+        runValidators: true,
+      });
+      res.send(user);
+    } catch (err) {
+      if (err.name === 'CastError') {
+        res.status(400).send({ message: 'Произошла ошибка' });
+      }
+      console.log(err)
+      res.status(500).send({ message: `Что-то пошло не так` })
+    }
+  }
+
+const updateAvatar = async (req, res) => {
+  try {
+    const user = await User.findByIdAndUpdate(req.user._id, {
+      avatar: req.body.avatar,
+    }, {
+      new: true,
+      runValidators: true,
+    });
+    res.send(user);
+  } catch (err) {
+    if (err.name === 'CastError') {
+      res.status(400).send({ message: 'Произошла ошибка' });
+    }
+    console.log(err)
+    res.status(500).send({ message: `Что-то пошло не так ${err}` })
+  }
+}
+
 module.exports = {
   getUser,
   getUsers,
   createUser,
+  updateUser,
+  updateAvatar
 };
