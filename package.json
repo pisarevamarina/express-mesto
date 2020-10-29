@@ -1,8 +1,9 @@
 {
   "name": "express-mesto",
+  "author": "Pisareva Marina",
   "version": "1.0.0",
   "description": "## Директории",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
@@ -14,7 +15,6 @@
     "url": "git+https://github.com/pisarevamarina/express-mesto.git"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pisarevamarina/express-mesto/issues"

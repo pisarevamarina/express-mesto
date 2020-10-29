@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use('/', users);
 app.use('/', cards);
 
-app.get('*', (req, res) => {
+app.all('*', (req, res) => {
   res.status(404).send({ message: 'Запрашиваемый ресурс не найден' });
 });
 

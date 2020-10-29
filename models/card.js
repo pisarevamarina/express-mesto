@@ -12,7 +12,7 @@ const cardSchema = mongoose.Schema({
     required: true,
     validate: {
       validator(v) {
-        return /^http[s]:\/\/\w+/.test(v);
+        return /https?:\/\/(www\.)?([^#\s])+\.[^#\s]+#?$/.test(v);
       },
       message: (props) => `${props.value} is not a valid avatar link!`,
     },

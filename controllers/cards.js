@@ -19,10 +19,11 @@ const createCard = async (req, res) => {
     const card = await Card.create({ owner, name, link });
     res.status(200).send(card);
   } catch (err) {
-    if (err.name === 'CastError') {
+    if (err.name === 'ValidationError') {
       res.status(400).send({ message: 'Произошла ошибка' });
+    } else {
+      res.status(500).send({ message: 'Что-то пошло не так' });
     }
-    res.status(500).send({ message: 'Что-то пошло не так' });
   }
 };
 

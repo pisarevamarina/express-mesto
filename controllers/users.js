@@ -29,17 +29,18 @@ const getUser = async (req, res) => {
 
 const createUser = async (req, res) => {
   try {
-    const id = User.countDocuments();
+    const id = await User.countDocuments();
     const { name, about, avatar } = req.body;
     const user = await User.create({
-      name, about, avatar, id,
+      id, name, about, avatar,
     });
     res.status(200).send(user);
   } catch (err) {
-    if (err.name === 'CastError') {
+    if (err.name === 'ValidationError') {
       res.status(400).send({ message: 'Произошла ошибка' });
+    } else {
+      res.status(500).send({ message: 'Что-то пошло не так' });
     }
-    res.status(500).send({ message: 'Что-то пошло не так' });
   }
 };
 
@@ -54,10 +55,10 @@ const updateUser = async (req, res) => {
     });
     res.status(200).send(user);
   } catch (err) {
-    if (err.name === 'CastError') {
+    if (err.name === 'ValidationError') {
       res.status(400).send({ message: 'Произошла ошибка' });
     }
-    res.status(500).send({ message: 'Что-то пошло не так' });
+    res.status(500).send({ message: 'Что-то пошло не ' });
   }
 };
 
