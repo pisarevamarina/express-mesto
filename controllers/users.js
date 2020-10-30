@@ -7,8 +7,9 @@ const getUsers = async (req, res) => {
   } catch (err) {
     if (err.name === 'CastError') {
       res.status(400).send({ message: 'Произошла ошибка' });
+    } else {
+      res.status(500).send({ message: `Что-то пошло не так: ${err}` });
     }
-    res.status(500).send({ message: `Что-то пошло не так: ${err}` });
   }
 };
 
@@ -22,8 +23,9 @@ const getUser = async (req, res) => {
   } catch (err) {
     if (err.name === 'CastError') {
       res.status(400).send({ message: 'Невалидный id' });
+    } else {
+      res.status(500).send({ message: 'Что-то пошло не так' });
     }
-    res.status(500).send({ message: 'Что-то пошло не так' });
   }
 };
 
@@ -57,8 +59,9 @@ const updateUser = async (req, res) => {
   } catch (err) {
     if (err.name === 'ValidationError') {
       res.status(400).send({ message: 'Произошла ошибка' });
+    } else {
+      res.status(500).send({ message: 'Что-то пошло не ' });
     }
-    res.status(500).send({ message: 'Что-то пошло не ' });
   }
 };
 
@@ -74,8 +77,9 @@ const updateAvatar = async (req, res) => {
   } catch (err) {
     if (err.name === 'CastError') {
       res.status(400).send({ message: 'Произошла ошибка' });
+    } else {
+      res.status(500).send({ message: `Что-то пошло не так ${err}` });
     }
-    res.status(500).send({ message: `Что-то пошло не так ${err}` });
   }
 };
 
