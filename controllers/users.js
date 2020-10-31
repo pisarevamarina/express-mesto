@@ -24,8 +24,9 @@ const getUser = async (req, res) => {
   } catch (err) {
     if (err.name === 'CastError') {
       res.status(400).send({ message: 'Невалидный id' });
+    } else {
+      res.status(500).send({ message: 'Что-то пошло не так' });
     }
-    res.status(500).send({ message: 'Что-то пошло не так' });
   }
 };
 
