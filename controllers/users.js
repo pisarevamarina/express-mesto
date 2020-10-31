@@ -18,14 +18,14 @@ const getUser = async (req, res) => {
     const user = await User.findById(req.params.id);
     if (!user) {
       res.status(404).send({ message: 'Нет пользователя с таким id' });
+    } else {
+      res.status(200).send(user);
     }
-    res.status(200).send(user);
   } catch (err) {
     if (err.name === 'CastError') {
       res.status(400).send({ message: 'Невалидный id' });
-    } else {
-      res.status(500).send({ message: 'Что-то пошло не так' });
     }
+    res.status(500).send({ message: 'Что-то пошло не так' });
   }
 };
 
@@ -34,7 +34,10 @@ const createUser = async (req, res) => {
     const id = await User.countDocuments();
     const { name, about, avatar } = req.body;
     const user = await User.create({
-      id, name, about, avatar,
+      id,
+      name,
+      about,
+      avatar,
     });
     res.status(200).send(user);
   } catch (err) {
@@ -48,13 +51,17 @@ const createUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
   try {
-    const user = await User.findByIdAndUpdate(req.user._id, {
-      name: req.body.name,
-      about: req.body.about,
-    }, {
-      new: true,
-      runValidators: true,
-    });
+    const user = await User.findByIdAndUpdate(
+      req.user._id,
+      {
+        name: req.body.name,
+        about: req.body.about,
+      },
+      {
+        new: true,
+        runValidators: true,
+      },
+    );
     res.status(200).send(user);
   } catch (err) {
     if (err.name === 'ValidationError') {
@@ -67,12 +74,16 @@ const updateUser = async (req, res) => {
 
 const updateAvatar = async (req, res) => {
   try {
-    const user = await User.findByIdAndUpdate(req.user._id, {
-      avatar: req.body.avatar,
-    }, {
-      new: true,
-      runValidators: true,
-    });
+    const user = await User.findByIdAndUpdate(
+      req.user._id,
+      {
+        avatar: req.body.avatar,
+      },
+      {
+        new: true,
+        runValidators: true,
+      },
+    );
     res.status(200).send(user);
   } catch (err) {
     if (err.name === 'CastError') {

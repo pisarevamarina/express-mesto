@@ -7,12 +7,11 @@ const getCards = async (req, res) => {
   } catch (err) {
     if (err.name === 'CastError') {
       res.status(400).send({ message: 'Произошла ошибка' });
-    }
-    else{
+    } else {
       res.status(500).send({ message: `Что-то пошло не так: ${err}` });
+    }
   }
 };
-}
 
 const createCard = async (req, res) => {
   try {
@@ -39,12 +38,11 @@ const deleteCard = async (req, res) => {
   } catch (err) {
     if (err.name === 'CastError') {
       res.status(400).send({ message: 'Невалидный id' });
-    }
-    else{
+    } else {
       res.status(500).send({ message: 'Что-то пошло не так' });
+    }
   }
-};}
-
+};
 
 const likeCard = async (req, res) => {
   try {
@@ -60,11 +58,11 @@ const likeCard = async (req, res) => {
   } catch (err) {
     if (err.name === 'CastError') {
       res.status(400).send({ message: 'Невалидный id' });
+    } else {
+      res.status(500).send({ message: 'Что-то пошло не так' });
     }
-    else {res.status(500).send({ message: 'Что-то пошло не так' });
   }
 };
-}
 
 const dislikeCard = async (req, res) => {
   try {
@@ -79,11 +77,11 @@ const dislikeCard = async (req, res) => {
   } catch (err) {
     if (err.name === 'CastError') {
       res.status(400).send({ message: 'Невалидный id' });
+    } else {
+      res.status(500).send({ message: 'Что-то пошло не так' });
     }
-    else {res.status(500).send({ message: 'Что-то пошло не так' });
   }
 };
-}
 
 module.exports = {
   getCards,
